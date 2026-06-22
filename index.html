@@ -3,136 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="牧 千夜（Senya Maki）のオリジナル作品。写真作品を中心に、著作権情報を掲載しています。">
+    <meta name="description" content="牧 千夜（Senya Maki）の公式ウェブサイト。オリジナル写真作品の公開、プロフィール、お問い合わせ。">
+    <meta name="keywords" content="牧 千夜, Senya Maki, 写真, オリジナル作品, 著作権, ポートフォリオ">
     <meta name="author" content="牧 千夜">
-    <title>牧 千夜 | オリジナル作品</title>
-    <!-- Font Nhật chuẩn -->
+    <meta property="og:title" content="牧 千夜 | オリジナル作品">
+    <meta property="og:description" content="牧 千夜のオリジナル写真作品の公式公開ページです。著作権情報を掲載。">
+    <meta property="og:image" content="https://yourusername.github.io/yourrepo/727364800_1525235648984501_8751105192935955753_n.jpg">
+    <meta property="og:type" content="website">
+    <title>牧 千夜 | オリジナル作品 | 公式サイト</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
-            background: #f5f5f5;
+            background: #f9f9f9;
             color: #333;
             line-height: 1.8;
             letter-spacing: 0.03em;
         }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        /* HEADER / NAVIGATION */
+        a { text-decoration: none; color: #333; }
         .header {
-            background: #ffffff;
+            background: #fff;
             border-bottom: 1px solid #e0e0e0;
             position: sticky;
             top: 0;
             z-index: 100;
         }
         .nav {
-            max-width: 960px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 1.5rem;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-        }
-        .logo span {
-            color: #8c8c8c;
-            font-weight: 300;
-            font-size: 0.9rem;
-            margin-left: 0.5rem;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links li a {
-            font-size: 0.9rem;
-            font-weight: 400;
-            transition: color 0.2s;
-        }
-        .nav-links li a:hover {
-            color: #a0a0a0;
-        }
-
-        /* MAIN CONTENT */
-        .main {
-            max-width: 860px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
-        .breadcrumb {
-            font-size: 0.8rem;
-            color: #999;
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a {
-            color: #999;
-        }
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
-        .article {
-            background: #ffffff;
+        .logo { font-size: 1.5rem; font-weight: 500; }
+        .logo span { color: #999; font-weight: 300; font-size: 0.9rem; margin-left: 0.4rem; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links li a { font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links li a:hover { color: #888; }
+        .main { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
+        .breadcrumb { font-size: 0.8rem; color: #999; margin-bottom: 1.5rem; }
+        .breadcrumb a { color: #999; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .content-section {
+            background: #fff;
             border-radius: 6px;
             box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-            padding: 2.5rem 2rem;
-        }
-        .article-header {
-            border-bottom: 1px solid #eee;
-            padding-bottom: 1.2rem;
+            padding: 2rem;
             margin-bottom: 2rem;
         }
-        .article-header h1 {
-            font-size: 1.8rem;
+        .content-section h2 {
+            font-size: 1.5rem;
             font-weight: 500;
-            margin-bottom: 0.4rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.6rem;
         }
-        .article-header .meta {
-            font-size: 0.85rem;
-            color: #888;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem;
-        }
-        .article-body {
-            text-align: center;
-        }
-        .article-body img {
+        .meta { font-size: 0.85rem; color: #888; margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 1.2rem; }
+        .image-container { text-align: center; margin: 1.5rem 0; }
+        .image-container img {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
             box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         }
-        .article-body .caption {
-            margin-top: 1.2rem;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: left;
-            background: #fafafa;
-            padding: 1.2rem;
-            border-left: 3px solid #d4d4d4;
-        }
-        .article-body .caption p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* FOOTER */
+        .description { margin-top: 1.2rem; font-size: 0.9rem; color: #555; background: #fafafa; padding: 1.2rem; border-left: 3px solid #ccc; }
+        .profile p { margin-bottom: 0.8rem; }
+        .contact p { margin-bottom: 0.6rem; }
         .footer {
-            background: #ffffff;
+            background: #fff;
             border-top: 1px solid #e0e0e0;
             text-align: center;
             padding: 2rem 1.5rem;
@@ -140,35 +80,19 @@
             font-size: 0.8rem;
             color: #999;
         }
-        .footer .copyright {
-            margin-top: 0.5rem;
-            color: #777;
-        }
-
-        /* RESPONSIVE */
+        .footer .copyright { margin-top: 0.5rem; color: #777; }
         @media (max-width: 600px) {
-            .nav {
-                flex-direction: column;
-                gap: 0.8rem;
-                text-align: center;
-            }
-            .nav-links {
-                gap: 1.2rem;
-            }
-            .article {
-                padding: 1.5rem;
-            }
+            .nav { flex-direction: column; gap: 0.8rem; text-align: center; }
+            .nav-links { gap: 1.2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
+    <!-- HEADER / NAVIGATION -->
     <header class="header">
         <nav class="nav">
-            <div class="logo">
-                牧 千夜 <span>Senya Maki</span>
-            </div>
+            <div class="logo">牧 千夜 <span>Senya Maki</span></div>
             <ul class="nav-links">
                 <li><a href="#">ホーム</a></li>
                 <li><a href="#">作品集</a></li>
@@ -180,38 +104,59 @@
 
     <!-- MAIN CONTENT -->
     <main class="main">
-        <!-- BREADCRUMB (điều hướng breadcrumb giống web Nhật) -->
+        <!-- BREADCRUMB -->
         <div class="breadcrumb">
-            <a href="#">ホーム</a> &gt; <a href="#">作品集</a> &gt; <span>無題（オリジナル写真）</span>
+            <a href="#">ホーム</a> &gt; <a href="#">作品集</a> &gt; <strong>無題（オリジナル写真）</strong>
         </div>
 
-        <!-- ARTICLE -->
-        <article class="article">
-            <div class="article-header">
-                <h1>無題</h1>
-                <div class="meta">
-                    <span>📅 公開日: <time datetime="2024-01-15">2024年1月15日</time></span>
-                    <span>📷 オリジナル作品</span>
-                    <span>© 牧 千夜</span>
-                </div>
+        <!-- 1. TÁC PHẨM CHÍNH -->
+        <section class="content-section">
+            <h2>📷 無題（オリジナル写真）</h2>
+            <div class="meta">
+                <span>📅 公開日: <time datetime="2024-01-15">2024年1月15日</time></span>
+                <span>🏷️ カテゴリ: 写真作品</span>
+                <span>© 牧 千夜</span>
             </div>
-            <div class="article-body">
-                <!-- ⚠️ THAY ĐÚNG TÊN FILE ẢNH CỦA BẠN VÀO ĐÂY -->
+            <div class="image-container">
+                <!-- THAY TÊN FILE ẢNH CỦA BẠN VÀO ĐÂY -->
                 <img src="727364800_1525235648984501_8751105192935955753_n.jpg" alt="オリジナル写真作品">
-
-                <div class="caption">
-                    <p><strong>作品について</strong></p>
-                    <p>本作品は、2024年1月に撮影されたオリジナル写真です。著作権は作者である牧 千夜（Senya Maki）に帰属します。</p>
-                    <p>無断転載・無断使用は固くお断りいたします。このページは、著作権の公式な公開記録として機能します。</p>
-                    <p>© 2024 牧 千夜 All Rights Reserved.</p>
-                </div>
             </div>
-        </article>
+            <div class="description">
+                <p><strong>作品について</strong></p>
+                <p>本作品は、2024年1月15日に撮影・公開されたオリジナル写真です。著作権は作者である牧 千夜（Senya Maki）が保有しています。無断転載・無断使用は固くお断りいたします。</p>
+                <p>このページは、著作権の公式な公開記録として機能します。本作品に関するお問い合わせは下部の連絡先までお願いいたします。</p>
+                <p>© 2024 牧 千夜 All Rights Reserved.</p>
+            </div>
+        </section>
+
+        <!-- 2. TIÊU ĐỀ PHỤ: THÔNG TIN BẢN QUYỀN -->
+        <section class="content-section">
+            <h2>🔒 著作権について</h2>
+            <p>当サイトに掲載されているすべての写真・画像・文章の著作権は、特に明記のない限り、牧 千夜に帰属します。許可なく複製、転載、改変、配布、販売することを禁じます。</p>
+            <p>著作権侵害を発見された場合は、直ちにご連絡ください。</p>
+        </section>
+
+        <!-- 3. TIÊU ĐỀ PHỤ: HỒ SƠ TÁC GIẢ (PROFILE) -->
+        <section class="content-section profile">
+            <h2>👤 プロフィール</h2>
+            <p><strong>名前:</strong> 牧 千夜（まき せんや / Senya Maki）</p>
+            <p><strong>所在地:</strong> 日本</p>
+            <p><strong>活動内容:</strong> 写真家。日常の風景やポートレートを中心に、SNSや個人サイトで作品を公開しています。オリジナル作品の著作権保護に積極的に取り組んでいます。</p>
+            <p>当サイトは、作品の正式な公開および著作権主張のためのプラットフォームです。</p>
+        </section>
+
+        <!-- 4. TIÊU ĐỀ PHỤ: LIÊN HỆ (CONTACT) -->
+        <section class="content-section contact">
+            <h2>📧 お問い合わせ</h2>
+            <p>著作権に関するお問い合わせ、使用許諾のご依頼、その他ご連絡は下記までお願いいたします。</p>
+            <p><strong>Email:</strong> senya.maki@example.com</p>
+            <p><strong>注意:</strong> スパムや迷惑メールはご遠慮ください。返信には数日かかる場合がございます。</p>
+        </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>牧 千夜 公式サイト</p>
+        <p>牧 千夜 公式ウェブサイト</p>
         <p class="copyright">© 2024 Senya Maki. All rights reserved.</p>
     </footer>
 
