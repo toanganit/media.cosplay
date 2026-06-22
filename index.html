@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Original Work | My Portfolio</title>
-    <!-- Font chữ Nhật (Noto Sans JP) tạo cảm giác website Nhật -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
+    <meta name="description" content="牧 千夜（Senya Maki）のオリジナル作品。写真作品を中心に、著作権情報を掲載しています。">
+    <meta name="author" content="牧 千夜">
+    <title>牧 千夜 | オリジナル作品</title>
+    <!-- Font Nhật chuẩn -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,110 +15,205 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Noto Sans JP', 'Helvetica Neue', sans-serif;
-            background: #f9f9f7;
-            color: #2d2d2d;
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background: #f5f5f5;
+            color: #333;
             line-height: 1.8;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.03em;
         }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
+        a {
+            text-decoration: none;
+            color: #333;
         }
-        header {
-            text-align: center;
-            padding: 3rem 0 1.5rem;
+
+        /* HEADER / NAVIGATION */
+        .header {
+            background: #ffffff;
             border-bottom: 1px solid #e0e0e0;
-            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        header h1 {
-            font-weight: 300;
-            font-size: 1.8rem;
-            color: #1a1a1a;
-            margin-bottom: 0.3rem;
-        }
-        header p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-        .work-info {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        .work-info h2 {
-            font-weight: 500;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #111;
-        }
-        .meta {
+        .nav {
+            max-width: 960px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+        .logo span {
+            color: #8c8c8c;
+            font-weight: 300;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links li a {
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .nav-links li a:hover {
+            color: #a0a0a0;
+        }
+
+        /* MAIN CONTENT */
+        .main {
+            max-width: 860px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        .breadcrumb {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumb a {
+            color: #999;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article {
+            background: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+            padding: 2.5rem 2rem;
+        }
+        .article-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .article-header h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+        .article-header .meta {
             font-size: 0.85rem;
             color: #888;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
         }
-        .meta span {
-            display: inline-block;
-        }
-        .image-container {
+        .article-body {
             text-align: center;
-            margin: 1.5rem 0;
         }
-        .image-container img {
+        .article-body img {
             max-width: 100%;
             height: auto;
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
         }
-        .image-container img:hover {
-            transform: scale(1.01);
+        .article-body .caption {
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: left;
+            background: #fafafa;
+            padding: 1.2rem;
+            border-left: 3px solid #d4d4d4;
         }
-        .description {
-            margin-top: 1.5rem;
-            color: #555;
-            font-size: 0.95rem;
+        .article-body .caption p {
+            margin-bottom: 0.5rem;
         }
-        footer {
+
+        /* FOOTER */
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #e0e0e0;
             text-align: center;
-            font-size: 0.75rem;
-            color: #aaa;
-            padding: 2rem 0;
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #999;
+        }
+        .footer .copyright {
+            margin-top: 0.5rem;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .nav {
+                flex-direction: column;
+                gap: 0.8rem;
+                text-align: center;
+            }
+            .nav-links {
+                gap: 1.2rem;
+            }
+            .article {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Original Work</h1>
-            <p>© 2024 by [Your Name]</p>
-        </header>
 
-        <section class="work-info">
-            <h2>無題 (Untitled Photograph)</h2>
-            <div class="meta">
-                <span>📅 Published: <strong>2024-01-15</strong></span>
-                <span>© All rights reserved</span>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                牧 千夜 <span>Senya Maki</span>
             </div>
-            <div class="image-container">
-                <!-- THAY 'tenanh.jpg' bằng tên file ảnh của bạn -->
-                <img src="727364800_1525235648984501_8751105192935955753_n.jpg" alt="Original Work">
-            </div>
-            <div class="description">
-                <p>This is an original photographic work created by me on [date]. Unauthorized reproduction or use of this image is strictly prohibited. This page serves as the official publication record of my copyright ownership.</p>
-            </div>
-        </section>
+            <ul class="nav-links">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="#">作品集</a></li>
+                <li><a href="#">プロフィール</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <footer>
-            <p>本作品の著作権は作者に帰属します。</p>
-        </footer>
-    </div>
+    <!-- MAIN CONTENT -->
+    <main class="main">
+        <!-- BREADCRUMB (điều hướng breadcrumb giống web Nhật) -->
+        <div class="breadcrumb">
+            <a href="#">ホーム</a> &gt; <a href="#">作品集</a> &gt; <span>無題（オリジナル写真）</span>
+        </div>
+
+        <!-- ARTICLE -->
+        <article class="article">
+            <div class="article-header">
+                <h1>無題</h1>
+                <div class="meta">
+                    <span>📅 公開日: <time datetime="2024-01-15">2024年1月15日</time></span>
+                    <span>📷 オリジナル作品</span>
+                    <span>© 牧 千夜</span>
+                </div>
+            </div>
+            <div class="article-body">
+                <!-- ⚠️ THAY ĐÚNG TÊN FILE ẢNH CỦA BẠN VÀO ĐÂY -->
+                <img src="727364800_1525235648984501_8751105192935955753_n.jpg" alt="オリジナル写真作品">
+
+                <div class="caption">
+                    <p><strong>作品について</strong></p>
+                    <p>本作品は、2024年1月に撮影されたオリジナル写真です。著作権は作者である牧 千夜（Senya Maki）に帰属します。</p>
+                    <p>無断転載・無断使用は固くお断りいたします。このページは、著作権の公式な公開記録として機能します。</p>
+                    <p>© 2024 牧 千夜 All Rights Reserved.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>牧 千夜 公式サイト</p>
+        <p class="copyright">© 2024 Senya Maki. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
