@@ -67,22 +67,26 @@
             flex-direction: column;
         }
         .gallery-item:hover { transform: translateY(-3px); }
-        /* SỬA: bỏ chiều cao cố định, dùng max-height và object-fit contain để ảnh không bị cắt */
         .gallery-item img {
             width: 100%;
-            max-height: 400px; /* giới hạn chiều cao tối đa, nhưng không cắt */
-            object-fit: contain; /* hiển thị toàn bộ ảnh, không cắt */
+            max-height: 400px;
+            object-fit: contain;
             display: block;
-            background: #f5f5f5; /* nền nhẹ nếu ảnh không phủ hết khung */
+            background: #f5f5f5;
         }
         .gallery-item .info {
-            padding: 1rem 1.2rem;
+            padding: 1.2rem;
             flex: 1;
         }
         .gallery-item .info h3 {
             font-size: 1.1rem;
             font-weight: 500;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .gallery-item .info .desc {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.8rem;
         }
         .gallery-item .info .date {
             font-size: 0.8rem;
@@ -97,7 +101,7 @@
             margin-top: 0.5rem;
         }
         .gallery-item a {
-            display: block;
+            display: inline-block;
             color: #0066c0;
             font-size: 0.8rem;
             margin-top: 0.4rem;
@@ -142,36 +146,42 @@
 
         <div class="gallery">
 
-            <!-- ẢNH 1: bikini1.jpg -->
+            <!-- ẢNH 1 -->
             <div class="gallery-item">
-                <img src="bikini1.jpg" alt="船上のコスプレビキニ">
+                <img src="bikini1.jpg" alt="Cosplay">
                 <div class="info">
-                    <h3>船上のコスプレビキニ</h3>
-                    <div class="date">2024年1月15日公開</div>
-                    <div class="copyright">© 牧 千夜</div>
+                    <h3>【Cosplay】</h3>
+                    <p class="desc">白銀の髪と静かな眼差し。<br>少しだけ凛とした雰囲気を意識して撮影しました。</p>
+                    <p class="date">📷 オリジナル作品一覧<br>📅 2024年1月20日公開</p>
+                    <p class="copyright">© 牧 千夜</p>
                     <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini1.jpg" target="_blank">オリジナル画像を表示</a>
+                    <p style="font-size:0.75rem; color:#bbb;">#コスプレ #Cosplay</p>
                 </div>
             </div>
 
-            <!-- ẢNH 2: bikini2.jpg -->
+            <!-- ẢNH 2 -->
             <div class="gallery-item">
-                <img src="bikini2.jpg" alt="ビキニコスプレ２">
+                <img src="bikini2.jpg" alt="Cosplay">
                 <div class="info">
-                    <h3>ビキニコスプレ２</h3>
-                    <div class="date">2024年1月20日公開</div>
-                    <div class="copyright">© 牧 千夜</div>
+                    <h3>【Cosplay】</h3>
+                    <p class="desc">白銀の髪と静かな眼差し。<br>少しだけ凛とした雰囲気を意識して撮影しました。</p>
+                    <p class="date">📷 オリジナル作品一覧<br>📅 2024年1月20日公開</p>
+                    <p class="copyright">© 牧 千夜</p>
                     <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini2.jpg" target="_blank">オリジナル画像を表示</a>
+                    <p style="font-size:0.75rem; color:#bbb;">#コスプレ #Cosplay</p>
                 </div>
             </div>
 
-            <!-- ẢNH 3: bikini3.jpg -->
+            <!-- ẢNH 3 -->
             <div class="gallery-item">
-                <img src="bikini3.jpg" alt="船上のビキニポーズ">
+                <img src="bikini3.jpg" alt="Cosplay">
                 <div class="info">
-                    <h3>船上のビキニポーズ</h3>
-                    <div class="date">2024年2月1日公開</div>
-                    <div class="copyright">© 牧 千夜</div>
+                    <h3>【Cosplay】</h3>
+                    <p class="desc">白銀の髪と静かな眼差し。<br>少しだけ凛とした雰囲気を意識して撮影しました。</p>
+                    <p class="date">📷 オリジナル作品一覧<br>📅 2024年1月20日公開</p>
+                    <p class="copyright">© 牧 千夜</p>
                     <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini3.jpg" target="_blank">オリジナル画像を表示</a>
+                    <p style="font-size:0.75rem; color:#bbb;">#コスプレ #Cosplay</p>
                 </div>
             </div>
 
