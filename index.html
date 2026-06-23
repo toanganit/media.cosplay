@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="牧 千夜の公式ウェブサイト。オリジナルコスプレ写真作品の公開。船上ビキニコスプレ。">
-    <meta name="keywords" content="牧 千夜, コスプレ, ビキニ, 船上, オリジナル作品, 著作権">
+    <meta name="description" content="牧 千夜の公式ウェブサイト。オリジナルコスプレ写真作品の公開。複数作品を一覧で掲載。">
+    <meta name="keywords" content="牧 千夜, コスプレ, ビキニ, 船上, オリジナル作品, 著作権, ポートフォリオ">
     <meta name="author" content="牧 千夜">
-    <meta property="og:title" content="牧 千夜 | 船上のコスプレビキニ">
-    <meta property="og:description" content="牧 千夜のオリジナルコスプレ写真「船上のビキニコスプレ」。著作権情報を掲載。">
-    <meta property="og:image" content="https://yourusername.github.io/yourrepo/727364800_1525235648984501_8751105192935955753_n.jpg">
+    <meta property="og:title" content="牧 千夜 | オリジナル作品集">
+    <meta property="og:description" content="牧 千夜のオリジナルコスプレ写真一覧。著作権情報を掲載。">
+    <meta property="og:image" content="https://toanganit.github.io/media.cosplay/bikini1.jpg">
     <meta property="og:type" content="website">
-    <title>牧 千夜 | 船上のコスプレビキニ | 公式サイト</title>
+    <title>牧 千夜 | オリジナル作品集 | 公式サイト</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -30,7 +30,7 @@
             z-index: 100;
         }
         .nav {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -41,38 +41,63 @@
         .nav-links { list-style: none; display: flex; gap: 2rem; }
         .nav-links li a { font-size: 0.9rem; transition: color 0.2s; }
         .nav-links li a:hover { color: #888; }
-        .main { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
+        .main { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
         .breadcrumb { font-size: 0.8rem; color: #999; margin-bottom: 1.5rem; }
         .breadcrumb a { color: #999; }
         .breadcrumb a:hover { text-decoration: underline; }
-        .content-section {
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 0.5rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .gallery-item {
             background: #fff;
             border-radius: 6px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-            padding: 2rem;
-            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            overflow: hidden;
+            transition: transform 0.2s;
         }
-        .content-section h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.2rem;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 0.6rem;
-        }
-        .meta { font-size: 0.85rem; color: #888; margin-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 1.2rem; }
-        .image-container { text-align: center; margin: 1.5rem 0; }
-        .image-container img {
-            max-width: 500px;
+        .gallery-item:hover { transform: translateY(-3px); }
+        .gallery-item img {
             width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            transition: transform 0.3s;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
-        .image-container img:hover { transform: scale(1.02); }
-        .description { margin-top: 1.2rem; font-size: 0.9rem; color: #555; background: #fafafa; padding: 1.2rem; border-left: 3px solid #ccc; }
-        .profile p { margin-bottom: 0.8rem; }
-        .contact p { margin-bottom: 0.6rem; }
+        .gallery-item .info {
+            padding: 1rem 1.2rem;
+        }
+        .gallery-item .info h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+        .gallery-item .info .date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 0.4rem;
+        }
+        .gallery-item .info .copyright {
+            font-size: 0.75rem;
+            color: #aaa;
+            border-top: 1px dashed #eee;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .gallery-item a {
+            display: block;
+            color: #0066c0;
+            font-size: 0.8rem;
+            margin-top: 0.4rem;
+            text-decoration: underline;
+        }
         .footer {
             background: #fff;
             border-top: 1px solid #e0e0e0;
@@ -86,13 +111,11 @@
         @media (max-width: 600px) {
             .nav { flex-direction: column; gap: 0.8rem; text-align: center; }
             .nav-links { gap: 1.2rem; }
-            .image-container img { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <nav class="nav">
             <div class="logo">牧 千夜</div>
@@ -105,50 +128,57 @@
         </nav>
     </header>
 
-    <!-- MAIN -->
     <main class="main">
         <div class="breadcrumb">
-            <a href="#">ホーム</a> &gt; <a href="#">作品集</a> &gt; <strong>船上のコスプレビキニ</strong>
+            <a href="#">ホーム</a> &gt; <strong>作品集</strong>
         </div>
 
-        <section class="content-section">
-            <h2>📷 船上のコスプレビキニ</h2>
-            <div class="meta">
-                <span>📅 公開日: <time datetime="2024-01-15">2024年1月15日</time></span>
-                <span>🏷️ カテゴリ: コスプレ写真</span>
-                <span>© 牧 千夜</span>
-            </div>
-            <div class="image-container">
-                <img src="727364800_1525235648984501_8751105192935955753_n.jpg" alt="船上でのコスプレビキニ">
-            </div>
-            <div class="description">
-                <p><strong>作品について</strong></p>
-                <p>本作品は、2024年1月15日に撮影・公開されたオリジナルコスプレ写真です。船上で撮影されたビキニコスプレ作品であり、著作権は作者である牧 千夜が保有しています。無断転載・無断使用は固くお断りいたします。</p>
-                <p>このページは、著作権の公式な公開記録として機能します。本作品に関するお問い合わせは下部の連絡先までお願いいたします。</p>
-                <p>© 2024 牧 千夜 All Rights Reserved.</p>
-            </div>
-        </section>
+        <h2 class="section-title">📷 オリジナル作品一覧</h2>
 
-        <section class="content-section">
-            <h2>🔒 著作権について</h2>
-            <p>当サイトに掲載されているすべての写真・画像・文章の著作権は、特に明記のない限り、牧 千夜に帰属します。許可なく複製、転載、改変、配布、販売することを禁じます。</p>
-            <p>著作権侵害を発見された場合は、直ちにご連絡ください。</p>
-        </section>
+        <div class="gallery">
 
-        <section class="content-section profile">
-            <h2>👤 プロフィール</h2>
-            <p><strong>名前:</strong> 牧 千夜（まき せんや）</p>
-            <p><strong>所在地:</strong> 日本</p>
-            <p><strong>活動内容:</strong> コスプレイヤー兼写真家。オリジナルコスプレ作品を中心に、個人サイトで公開。著作権保護に積極的に取り組んでいます。</p>
-            <p>当サイトは、作品の正式な公開および著作権主張のためのプラットフォームです。</p>
-        </section>
+            <!-- ẢNH 1: bikini1.jpg -->
+            <div class="gallery-item">
+                <img src="bikini1.jpg" alt="船上のコスプレビキニ">
+                <div class="info">
+                    <h3>船上のコスプレビキニ</h3>
+                    <div class="date">2024年1月15日公開</div>
+                    <div class="copyright">© 牧 千夜</div>
+                    <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini1.jpg" target="_blank">オリジナル画像を表示</a>
+                </div>
+            </div>
 
-        <section class="content-section contact">
-            <h2>📧 お問い合わせ</h2>
-            <p>著作権に関するお問い合わせ、使用許諾のご依頼、その他ご連絡は下記までお願いいたします。</p>
-            <p><strong>Email:</strong> toangan.media@boxfi.uk</p>
-            <p><strong>注意:</strong> スパムや迷惑メールはご遠慮ください。返信には数日かかる場合がございます。</p>
-        </section>
+            <!-- ẢNH 2: bikini2.jpg -->
+            <div class="gallery-item">
+                <img src="bikini2.jpg" alt="ビキニコスプレ２">
+                <div class="info">
+                    <h3>ビキニコスプレ２</h3>
+                    <div class="date">2024年1月20日公開</div>
+                    <div class="copyright">© 牧 千夜</div>
+                    <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini2.jpg" target="_blank">オリジナル画像を表示</a>
+                </div>
+            </div>
+
+            <!-- ẢNH 3: bikini3.jpg -->
+            <div class="gallery-item">
+                <img src="bikini3.jpg" alt="船上のビキニポーズ">
+                <div class="info">
+                    <h3>船上のビキニポーズ</h3>
+                    <div class="date">2024年2月1日公開</div>
+                    <div class="copyright">© 牧 千夜</div>
+                    <a href="https://raw.githubusercontent.com/toanganit/media.cosplay/main/bikini3.jpg" target="_blank">オリジナル画像を表示</a>
+                </div>
+            </div>
+
+            <!-- THÊM ẢNH MỚI THÌ COPY MỘT KHỐI TRÊN RỒI SỬA -->
+
+        </div>
+
+        <div style="background:#fff; border-radius:6px; padding:1.5rem; margin-top:2rem; box-shadow: 0 1px 6px rgba(0,0,0,0.05);">
+            <h3>🔒 著作権について</h3>
+            <p>当サイトに掲載されているすべての写真の著作権は牧 千夜に帰属します。無断転載・無断使用を禁じます。</p>
+            <p>著作権侵害を発見された方は <strong>toangan.media@boxfi.uk</strong> までご連絡ください。</p>
+        </div>
     </main>
 
     <footer class="footer">
